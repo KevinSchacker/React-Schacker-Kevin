@@ -1,0 +1,93 @@
+
+#not-found-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #5349e6, #616681);
+  color: #fff;
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+}
+
+#not-found-animation {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#not-found-magnifier {
+  width: 80px;
+  height: 80px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  position: relative;
+  animation: magnify 2s infinite;
+}
+
+#not-found-glass {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+@keyframes magnify {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Emoji animation */
+#not-found-emoji {
+  font-size: 50px;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Text styling */
+#not-found-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#not-found-text {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Back button styling */
+#not-found-button {
+  background-color: #fff;
+  color: #2a4dad;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#not-found-button:hover {
+  background-color: #3719e0;
+  color: #fff;
+}

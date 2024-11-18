@@ -1,0 +1,23 @@
+.item-detail-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .item-detail-container p {
+    margin-bottom: 1rem;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .error {
+    color: #d32f2f;
+    text-align: center;
+  }

@@ -1,53 +1,61 @@
-/* Estilos básicos del contenedor */
 .item-list-container {
-    text-align: center;
-    margin-top: 50px;
-    position: relative;
-  }
-  
-  /* Contenedor de la animación */
-  .loading-animation {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  /* Círculos individuales */
-  .loading-animation span {
-    margin-top: 15px;
-    width: 15px;
-    height: 15px;
-    background-color: #3498db;
-    border-radius: 50%;
-    animation: bounce 0.6s infinite ease-in-out;
-  }
-  
-  /* Diferentes tiempos de animación para cada círculo */
-  .loading-animation span:nth-child(1) {
-    animation-delay: -0.2s;
-  }
-  .loading-animation span:nth-child(2) {
-    animation-delay: -0.1s;
-  }
-  .loading-animation span:nth-child(3) {
-    animation-delay: 0s;
-  }
-  
-  /* Animación de rebote */
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
-  }
-  @media (max-width: 868px) {
-    .item-list-container{
-        display: block;
-        text-align: center;
-        margin-top: 100px; 
-    }
-  }
-  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  margin-top: 70px;
+}
+
+.item-list-container h2 {
+  font-size: 2rem;
+  color: #1a2a6c;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.item-list-container h3 {
+  font-size: 1.5rem;
+  color: #2a4dad;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 2rem;
+}
+
+.error-message {
+  text-align: center;
+  color: #dc2626;
+  padding: 2rem;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sort-container label {
+  margin-right: 0.5rem;
+  font-weight: bold;
+  color: #1a2a6c;
+}
+
+.sort-container select {
+  padding: 0.5rem;
+  border: 1px solid #2a4dad;
+  border-radius: 4px;
+  background-color: white;
+  color: #1a2a6c;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.sort-container select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(42, 77, 173, 0.2);
+}
