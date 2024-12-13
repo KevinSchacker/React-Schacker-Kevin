@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import SearchBar from '../SearchBar/SearchBar'
+import { CartContext } from '../../context/CartContext'
 import './NavBar.css'
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
+  const { getTotalQuantity } = useContext(CartContext)
 
   const categories = [
     { id: 'smartphones', name: 'Celulares' },
@@ -27,7 +29,10 @@ export default function NavBar() {
           ))}
         </div>
         <div className="navbar-right">
-          <CartWidget />
+          <Link to="/cart" className="cart-link">
+            <CartWidget />
+            <span className="cart-quantity">{getTotalQuantity()}</span>
+          </Link>
           <button 
             className="navbar-toggle" 
             onClick={() => setIsOpen(!isOpen)}

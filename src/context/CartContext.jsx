@@ -1,28 +1,59 @@
-import React, { createContext, useState, useContext } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 
-const CartContext = createContext()
-
-export const useCart = () => useContext(CartContext)
+export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([])
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem('cart')
+    return savedCart ? JSON.parse(savedCart) : []
+  })
 
-  const addToCart = (product, quantity) => {
-    setCartItems(prevItems => {
-      const existingItem = prevItems.find(item => item.id === product.id)
-      if (existingItem) {
-        return prevItems.map(item =>
-          item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
-        )
-      }
-      return [...prevItems, { ...product, quantity }]
-    })
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
+
+  const addItem = (item, quantity) => {
+    if (isInCart(item.id)) {
+      setCart(cart.map(cartItem => 
+        cartItem.id === item.id 
+          ? { ...cartItem, quantity: cartItem.quantity + quantity }
+          : cartItem
+      ))
+    } else {
+      setCart([...cart, { ...item, quantity }])
+    }
   }
 
-  const cartItemsCount = cartItems.reduce((total, item) => total + item.quantity, 0)
+  const removeItem = (itemId) => {
+    setCart(cart.filter(item => item.id !== itemId))
+  }
+
+  const clearCart = () => {
+    setCart([])
+  }
+
+  const isInCart = (id) => {
+    return cart.some(item => item.id === id)
+  }
+
+  const getTotalQuantity = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0)
+  }
+
+  const getTotalPrice = () => {
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0)
+  }
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, cartItemsCount }}>
+    <CartContext.Provider value={{
+      cart,
+      addItem,
+      removeItem,
+      clearCart,
+      isInCart,
+      getTotalQuantity,
+      getTotalPrice
+    }}>
       {children}
     </CartContext.Provider>
   )

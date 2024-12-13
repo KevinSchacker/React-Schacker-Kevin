@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./NotFound.css";
 
 const NotFound = () => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate('/');
+  };
+
   return (
     <div id="not-found-page">
       <div id="not-found-animation">
@@ -16,7 +23,7 @@ const NotFound = () => {
       </p>
       <button
         id="not-found-button"
-        onClick={() => window.history.back()}
+        onClick={handleGoBack}
       >
         Volver a la tienda
       </button>

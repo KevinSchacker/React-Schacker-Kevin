@@ -1,61 +1,83 @@
 .item-list-container {
+  padding: 120px 20px 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
-  margin-top: 70px;
+  min-height: calc(100vh - 60px);
 }
 
-.item-list-container h2 {
-  font-size: 2rem;
-  color: #1a2a6c;
-  margin-bottom: 1rem;
+.greeting {
   text-align: center;
-}
-
-.item-list-container h3 {
-  font-size: 1.5rem;
-  color: #2a4dad;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.loading-message {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #666;
-  padding: 2rem;
-}
-
-.error-message {
-  text-align: center;
-  color: #dc2626;
-  padding: 2rem;
-}
-
-.sort-container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.sort-container label {
-  margin-right: 0.5rem;
+  color: #1e3a8a;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #1a2a6c;
+  margin-bottom: 2rem;
+  padding: 0 20px;
 }
 
-.sort-container select {
-  padding: 0.5rem;
-  border: 1px solid #2a4dad;
-  border-radius: 4px;
+.filters-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
   background-color: white;
-  color: #1a2a6c;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-title {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.sort-select {
+  padding: 10px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: white;
+  color: #1e3a8a;
   font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.sort-container select:focus {
+.sort-select:hover {
+  border-color: #1e3a8a;
+}
+
+.sort-select:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(42, 77, 173, 0.2);
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.1);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: #1e3a8a;
+}
+
+@media (max-width: 768px) {
+  .item-list-container {
+    padding-top: 100px;
+  }
+
+  .filters-section {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .greeting {
+    font-size: 2rem;
+  }
+
+  .category-title {
+    font-size: 1.2rem;
+  }
 }
