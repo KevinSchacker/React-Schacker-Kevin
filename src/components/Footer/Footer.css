@@ -3,7 +3,7 @@
   color: #000000;
   padding: 1rem 0;
   position: fixed;
-  bottom: -60px; /* Ajusta este valor según la altura de tu footer */
+  bottom: -60px; 
   left: 0;
   width: 100%;
   transition: bottom 0.3s ease-in-out;

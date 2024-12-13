@@ -1,12 +1,12 @@
 .cart-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 20px 20px 20px; /* Aumentamos el padding superior para evitar que el navbar tape el contenido */
+  padding: 100px 20px 20px 20px; 
 }
 
 .cart-empty {
   text-align: center;
-  padding: 120px 20px 40px 20px; /* También ajustamos el padding del mensaje de carrito vacío */
+  padding: 120px 20px 40px 20px; 
 }
 
 .cart-items {
@@ -111,7 +111,7 @@
 
 @media (max-width: 768px) {
   .cart-container {
-    padding-top: 120px; /* Aumentamos aún más el padding en móviles por si el navbar es más alto */
+    padding-top: 120px; 
   }
 
   .cart-item {

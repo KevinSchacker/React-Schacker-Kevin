@@ -30,7 +30,7 @@
 .item-image-container {
   position: relative;
   width: 100%;
-  padding-bottom: 100%; /* Aspect ratio 1:1 */
+  padding-bottom: 100%; 
   background-color: #f8f9fa;
 }
 
